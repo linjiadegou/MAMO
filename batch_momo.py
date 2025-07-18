@@ -8,8 +8,6 @@ from tqdm import tqdm
 
 def run(file_path, key, user_name):
     # 读取CSV文件
-    # df = pd.read_csv('2024.12.7/smiles_100_gsk3b_jnk_qed_sa.csv')
-    # df = pd.read_csv('2024.10.30/smiles.csv')
     df = pd.read_csv(file_path)
 
     result_100 = []
@@ -18,14 +16,13 @@ def run(file_path, key, user_name):
     start_time = time.time()
     error_smiles = []
 
-    smiles = df["smiles"].tolist()  # 假设我们只处理前100个SMILES
+    smiles = df["smiles"].tolist() 
     with open(
         "2025.4.8/output_4.8_{}.csv".format(user_name), "w", newline=""
     ) as csvfile:
         writer = csv.writer(csvfile)
-        # 写入表头
         writer.writerow(["pre_smile", "opt_smile", "smi_list"])
-        # 使用tqdm创建进度条，并显示当前进度/总进度
+
         for i, smile in enumerate(
             tqdm(smiles, desc="Processing", total=len(smiles)), 1
         ):
@@ -48,7 +45,7 @@ def run(file_path, key, user_name):
             data = {
                 "inputs": {"smiles": smile},
                 "response_mode": "blocking",
-                "user": "ltl_4.8_{}".format(user_name),
+                "user": "{}".format(user_name),
             }
 
             try:
@@ -91,77 +88,29 @@ def run(file_path, key, user_name):
             if flag:
                 writer.writerow(temp)
 
-    # 记录结束时间并计算总时间
     end_time = time.time()
     total_time = end_time - start_time
     print(f"Total time taken: {total_time:.2f} seconds")
 
     try:
-        # 将error_smiles存入hh.csv文件中
         with open(
-            "2025.4.8/error_smiles_4.8_{}.csv".format(user_name), "w", newline=""
+            "data/error_smiles_{}.csv".format(user_name), "w", newline=""
         ) as error_file:
             error_writer = csv.writer(error_file)
-            error_writer.writerow(["error_smiles"])  # 写入列名
+            error_writer.writerow(["error_smiles"])  
             error_writer.writerows([[error_smile] for error_smile in error_smiles])
     except Exception as e:
         print(error_smiles)
 
 
-# run('2024.10.30/smiles_100.csv', 'app-rAbK1aFdN7oqvVMUngBj6bLv', 'QED')
-# run('2024.12.7/smiles_100_gsk3b_jnk_qed_sa.csv', 'app-5pKu7i1HVHVEYT0bUcfP2wTW', 'GSK3B')
-# run('2024.12.7/smiles_100_gsk3b_jnk_qed_sa.csv', 'app-xbBIgkRj73j5QblzzR7lwfJg', 'JNK3')
+if __name__ == "__main__":
+    import argparse
+    import argparse
 
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-opjnWXbHprvmrUz6so0jtcGJ', 'GSK3B_JNK3_4o_mini')
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-Ek9WWWfikdMOM2pRTpJ4XCGx', 'GSK3B_JNK3_QED_4o_mini')
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-l066KHWl4Awm8vQ3eeUDSnij', 'GSK3B_JNK3_QED_SA_4o_mini')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--file_path', type=str, default='smiles.csv')
+    parser.add_argument('--key', type=str, default=None)
+    parser.add_argument('--user_name', type=str, default="root")
+    args = parser.parse_args()
 
-# 消融
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-pXziANrtVZ86XkWdp5Ss1aBX', 'GSK3B_JNK3_QED_wu_central_2')
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-s5ceCLVDh8dQQYbe9lLDxjoy', 'GSK3B_JNK3_QED_SA_wu_central_2')
-
-# MAMO
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-0UF6m8bcOcpnh6DqZY49PIBW', 'QED_SA_mamo')
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-zqEDdA1CN3jyott6LDrO2H1E', 'GSK3B_JNK3_mamo')
-
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-YO4faqZzl0vu3zxHdcJoiQwY', 'GSK3B_JNK3_QED_mamo')
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-BcdOqeY8U2MpNn1BxaPWbNtx', 'GSK3B_QED_SA_mamo')
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-gY78ivOBbCpEvkEIBx62WXel', 'JNK3_QED_SA_mamo')
-
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-CUbVXM1K3mcMQtAYCssesqjF', 'GSK3B_JNK3_QED_SA_mamo')
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-Xt130Z9yjgHT7bDOagcbqyCn', 'GSK3B_QED_mamo')
-
-# gpt-4o-mini / deepseek
-# run(
-#     "2024.11.22/smiles_gsk3b_jnk3_100.csv",
-#     "app-0UF6m8bcOcpnh6DqZY49PIBW",
-#     "QED_SA_mamo_deepseek",
-# )
-# run(
-#     "2024.11.22/smiles_gsk3b_jnk3_100.csv",
-#     "app-zqEDdA1CN3jyott6LDrO2H1E",
-#     "GSK3B_JNK3_mamo_deepseek",
-# )
-# run('2024.11.22/smiles_gsk3b_jnk3_100.csv', 'app-PF6oUQKM5qMRpK5X7ZnwVHao', 'GSK3B_QED_mamo_deepseek')
-
-run(
-    "2024.11.22/smiles_gsk3b_jnk3_100.csv",
-    "app-YO4faqZzl0vu3zxHdcJoiQwY",
-    "GSK3B_JNK3_QED_mamo_deepseek",
-)
-run(
-    "2024.11.22/smiles_gsk3b_jnk3_100.csv",
-    "app-BcdOqeY8U2MpNn1BxaPWbNtx",
-    "GSK3B_QED_SA_mamo_deepseek",
-)
-run(
-    "2024.11.22/smiles_gsk3b_jnk3_100.csv",
-    "app-gY78ivOBbCpEvkEIBx62WXel",
-    "JNK3_QED_SA_mamo_deepseek",
-)
-
-run(
-    "2024.11.22/smiles_gsk3b_jnk3_100.csv",
-    "app-CUbVXM1K3mcMQtAYCssesqjF",
-    "GSK3B_JNK3_QED_SA_mamo_deepseek",
-)
+    run(args.file_path,args.key,args.user_name)
