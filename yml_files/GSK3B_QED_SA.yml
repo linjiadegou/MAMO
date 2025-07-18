@@ -1,0 +1,2990 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: GSK3B_QED_SA
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.3
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1732497198694-source-1732497201046-target
+      selected: false
+      source: '1732497198694'
+      sourceHandle: source
+      target: '1732497201046'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 1732497201046-source-1732497382655-target
+      selected: false
+      source: '1732497201046'
+      sourceHandle: source
+      target: '1732497382655'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: llm
+      id: 1732500044048-source-1732502281592-target
+      selected: false
+      source: '1732500044048'
+      sourceHandle: source
+      target: '1732502281592'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: if-else
+      id: 1732502281592-source-1732505070958-target
+      selected: false
+      source: '1732502281592'
+      sourceHandle: source
+      target: '1732505070958'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1732505070958-true-1732505085297-target
+      selected: false
+      source: '1732505070958'
+      sourceHandle: 'true'
+      target: '1732505085297'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1732505085297-source-1732505228293-target
+      selected: false
+      source: '1732505085297'
+      sourceHandle: source
+      target: '1732505228293'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: end
+      id: 1732505228293-source-1732505343848-target
+      selected: false
+      source: '1732505228293'
+      sourceHandle: source
+      target: '1732505343848'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: llm
+      id: 17325057335190-source-17325057511870-target
+      selected: false
+      source: '17325057335190'
+      sourceHandle: source
+      target: '17325057511870'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: if-else
+      id: 17325057511870-source-17325057591820-target
+      selected: false
+      source: '17325057511870'
+      sourceHandle: source
+      target: '17325057591820'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 17325057591820-true-17325057688610-target
+      selected: false
+      source: '17325057591820'
+      sourceHandle: 'true'
+      target: '17325057688610'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17325057688610-source-17325057748860-target
+      selected: false
+      source: '17325057688610'
+      sourceHandle: source
+      target: '17325057748860'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: end
+      id: 17325057748860-source-17325057798160-target
+      selected: false
+      source: '17325057748860'
+      sourceHandle: source
+      target: '17325057798160'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 17325056900340-source-17325058593320-target
+      selected: false
+      source: '17325056900340'
+      sourceHandle: source
+      target: '17325058593320'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 17325058145020-source-17325058718070-target
+      selected: false
+      source: '17325058145020'
+      sourceHandle: source
+      target: '17325058718070'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: llm
+      id: 17325058869510-source-17325058916360-target
+      selected: false
+      source: '17325058869510'
+      sourceHandle: source
+      target: '17325058916360'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: if-else
+      id: 17325058916360-source-17325058981520-target
+      selected: false
+      source: '17325058916360'
+      sourceHandle: source
+      target: '17325058981520'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 17325058981520-true-17325059028670-target
+      selected: false
+      source: '17325058981520'
+      sourceHandle: 'true'
+      target: '17325059028670'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17325059028670-source-17325059085670-target
+      selected: false
+      source: '17325059028670'
+      sourceHandle: source
+      target: '17325059085670'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: end
+      id: 17325059085670-source-17325059126940-target
+      selected: false
+      source: '17325059085670'
+      sourceHandle: source
+      target: '17325059126940'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: end
+      id: 1732515995929-source-1732516312356-target
+      selected: false
+      source: '1732515995929'
+      sourceHandle: source
+      target: '1732516312356'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1732497198694-source-1732601471413-target
+      selected: false
+      source: '1732497198694'
+      sourceHandle: source
+      target: '1732601471413'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 1732601471413-source-1732604147426-target
+      selected: false
+      source: '1732601471413'
+      sourceHandle: source
+      target: '1732604147426'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 1732497382655-source-1732609800162-target
+      selected: false
+      source: '1732497382655'
+      sourceHandle: source
+      target: '1732609800162'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 1732604147426-source-17326100966620-target
+      selected: false
+      source: '1732604147426'
+      sourceHandle: source
+      target: '17326100966620'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 17326100966620-source-1732610445658-target
+      selected: false
+      source: '17326100966620'
+      sourceHandle: source
+      target: '1732610445658'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 1732609800162-source-1732610445658-target
+      selected: false
+      source: '1732609800162'
+      sourceHandle: source
+      target: '1732610445658'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 1732610445658-source-1732500044048-target
+      selected: false
+      source: '1732610445658'
+      sourceHandle: source
+      target: '1732500044048'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1732505070958-false-1732624713047-target
+      selected: false
+      source: '1732505070958'
+      sourceHandle: 'false'
+      target: '1732624713047'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 1732624713047-source-1732505479360-target
+      selected: false
+      source: '1732624713047'
+      sourceHandle: source
+      target: '1732505479360'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1732505479360-source-1732627928880-target
+      selected: false
+      source: '1732505479360'
+      sourceHandle: source
+      target: '1732627928880'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1732627928880-source-17325056900340-target
+      selected: false
+      source: '1732627928880'
+      sourceHandle: source
+      target: '17325056900340'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1732627928880-source-17326282128250-target
+      selected: false
+      source: '1732627928880'
+      sourceHandle: source
+      target: '17326282128250'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 17326282128250-source-17326282191010-target
+      selected: false
+      source: '17326282128250'
+      sourceHandle: source
+      target: '17326282191010'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 17325058593320-source-17326303089060-target
+      selected: false
+      source: '17325058593320'
+      sourceHandle: source
+      target: '17326303089060'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 17326282191010-source-17326303157860-target
+      selected: false
+      source: '17326282191010'
+      sourceHandle: source
+      target: '17326303157860'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 17326303089060-source-17326306674950-target
+      selected: false
+      source: '17326303089060'
+      sourceHandle: source
+      target: '17326306674950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 17326303157860-source-17326306674950-target
+      selected: false
+      source: '17326303157860'
+      sourceHandle: source
+      target: '17326306674950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 17326306674950-source-17325057335190-target
+      source: '17326306674950'
+      sourceHandle: source
+      target: '17325057335190'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 17325057591820-false-17326317788500-target
+      source: '17325057591820'
+      sourceHandle: 'false'
+      target: '17326317788500'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: llm
+      id: 17326317788500-source-17326318240030-target
+      source: '17326317788500'
+      sourceHandle: source
+      target: '17326318240030'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 17326318240030-source-17326318390670-target
+      source: '17326318240030'
+      sourceHandle: source
+      target: '17326318390670'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 17326318390670-source-17325058145020-target
+      source: '17326318390670'
+      sourceHandle: source
+      target: '17325058145020'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 17326318390670-source-17326318691210-target
+      source: '17326318390670'
+      sourceHandle: source
+      target: '17326318691210'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 17326318691210-source-17326318752700-target
+      source: '17326318691210'
+      sourceHandle: source
+      target: '17326318752700'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 17325058718070-source-17326319175480-target
+      source: '17325058718070'
+      sourceHandle: source
+      target: '17326319175480'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 17326318752700-source-17326319234280-target
+      source: '17326318752700'
+      sourceHandle: source
+      target: '17326319234280'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 17326319175480-source-17326319680690-target
+      source: '17326319175480'
+      sourceHandle: source
+      target: '17326319680690'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 17326319234280-source-17326319680690-target
+      source: '17326319234280'
+      sourceHandle: source
+      target: '17326319680690'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 17326319680690-source-17325058869510-target
+      source: '17326319680690'
+      sourceHandle: source
+      target: '17325058869510'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: code
+      id: 17325058981520-false-17326332514450-target
+      source: '17325058981520'
+      sourceHandle: 'false'
+      target: '17326332514450'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: http-request
+      id: 17326332514450-source-1732515995929-target
+      source: '17326332514450'
+      sourceHandle: source
+      target: '1732515995929'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1732497198694-source-1732705980603-target
+      source: '1732497198694'
+      sourceHandle: source
+      target: '1732705980603'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 1732705980603-source-1732707329658-target
+      source: '1732705980603'
+      sourceHandle: source
+      target: '1732707329658'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 1732707329658-source-17327076045270-target
+      source: '1732707329658'
+      sourceHandle: source
+      target: '17327076045270'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 17327076045270-source-1732610445658-target
+      source: '17327076045270'
+      sourceHandle: source
+      target: '1732610445658'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1732627928880-source-17327182314740-target
+      source: '1732627928880'
+      sourceHandle: source
+      target: '17327182314740'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 17327182314740-source-17327184584480-target
+      source: '17327182314740'
+      sourceHandle: source
+      target: '17327184584480'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 17327184584480-source-17327184754030-target
+      source: '17327184584480'
+      sourceHandle: source
+      target: '17327184754030'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 17327184754030-source-17326306674950-target
+      source: '17327184754030'
+      sourceHandle: source
+      target: '17326306674950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 17326318390670-source-17327219311730-target
+      source: '17326318390670'
+      sourceHandle: source
+      target: '17327219311730'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: http-request
+      id: 17327219311730-source-17327219428480-target
+      source: '17327219311730'
+      sourceHandle: source
+      target: '17327219428480'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: http-request
+        targetType: code
+      id: 17327219428480-source-17327219545820-target
+      source: '17327219428480'
+      sourceHandle: source
+      target: '17327219545820'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: code
+      id: 17327219545820-source-17326319680690-target
+      source: '17327219545820'
+      sourceHandle: source
+      target: '17326319680690'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: smiles
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: smiles
+      height: 88
+      id: '1732497198694'
+      position:
+        x: -18.52157682317562
+        y: 103.14544515177346
+      positionAbsolute:
+        x: -18.52157682317562
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: c35956da-1ccc-437a-ab6f-56051fbfdb0b
+          role: system
+          text: '{{#1732497198694.smiles#}}
+
+            根据提供的分子SMILES，优化分子结构以提升其与GSK3β受体的结合亲和力。优化方式可通过添加、替换或删减官能团实现。生成40个优化后的分子SMILES，要求分子结构不重复，且不与所给分子重复，且在功能团分布、分子骨架、和空间结构上体现较高的多样性。探索多种优化策略，确保生成的分子具有显著的结构差异。仅返回优化后的分子SMILES列表，格式如下：[''smiles1'',
+            ''smiles2'', ''smiles3'', ...]，列表内仅包含SMILES字符串，不添加其他内容或说明。'
+        selected: false
+        title: 分子采样GSK3B
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '1732497201046'
+      position:
+        x: 395
+        y: -163.08109237654577
+      positionAbsolute:
+        x: 395
+        y: -163.08109237654577
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-43
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-47
+            key: rsp
+            type: text
+            value: '{{#1732497201046.text#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个GSK3B
+        type: http-request
+        url: http://39.105.167.2:28051/QED_GSK3B_SA_GSK3B
+        variables: []
+      height: 108
+      id: '1732497382655'
+      position:
+        x: 710.125732532083
+        y: -163.08109237654577
+      positionAbsolute:
+        x: 710.125732532083
+        y: -163.08109237654577
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-141
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-142
+            key: rsp
+            type: text
+            value: '{{#1732610445658.result#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 计算GSK3B_QED_SA
+        type: http-request
+        url: http://39.105.167.2:28051/QED_GSK3B_SA_3
+        variables: []
+      height: 108
+      id: '1732500044048'
+      position:
+        x: 1651.1257325320835
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 1651.1257325320835
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 6fe5d12a-fef2-4f14-a5d2-a0ee17467d4b
+          role: system
+          text: '{{#1732500044048.body#}}
+
+            请根据以下条件判断优化是否成功：1. 优化后的分子与GSK3B受体结合亲和力大于等于优化前的分子与GSK3B受体结合亲和力。2. 优化后的分子的QED值大于等于优化前的分子的QED值。3.
+            优化后的分子的SA值大于等于优化前的分子的SA值。4. Target sum大于等于2.8。
+
+            如果优化成功，仅仅返回：
+
+            Optimization result: True.
+
+            Optimized information: smiles1.（smiles1为优化后的分子smiles）
+
+            如果优化失败，仅仅返回：
+
+            Optimization result: False.
+
+            Optimized information: smiles0.（smiles0为优化后的分子smiles）
+
+            不添加其他内容或说明。'
+        selected: false
+        title: 判断本次优化是否成功
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '1732502281592'
+      position:
+        x: 1967.4007275282343
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 1967.4007275282343
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 3dfb5486-42af-4b3b-ab19-45da744bb9bd
+            value: 'True'
+            varType: string
+            variable_selector:
+            - '1732502281592'
+            - text
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 124
+      id: '1732505070958'
+      position:
+        x: 2332.208180829756
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 2332.208180829756
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: af550f2a-b0c1-4b8c-9b26-c80c9e1ba917
+          role: system
+          text: '{{#1732502281592.text#}}
+
+            Extract the molecule following "Optimized information:" and do not return
+            any other text.'
+        selected: false
+        title: 提取最终分子
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '1732505085297'
+      position:
+        x: 2686.4312146527923
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 2686.4312146527923
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+        selected: false
+        title: 提取优化过程中的分子
+        type: code
+        variables:
+        - value_selector:
+          - '1732610445658'
+          - result
+          variable: arg1
+      height: 52
+      id: '1732505228293'
+      position:
+        x: 3020.27393142611
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 3020.27393142611
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1732505085297'
+          - text
+          variable: text
+        - value_selector:
+          - '1732505228293'
+          - result
+          variable: smi_list
+        selected: false
+        title: 结束
+        type: end
+      height: 114
+      id: '1732505343848'
+      position:
+        x: 3374.3692353690158
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 3374.3692353690158
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 651f6bfd-03d8-47f1-b217-7be255420c0d
+          role: system
+          text: '{{#1732624713047.text#}}
+
+            从以上文本中提取分子分配信息，返回一个包含分子SMILES的列表，按顺序排列为：[''GSK3B智能体对应的分子smiles'',  ''QED智能体对应的分子smiles'',''SA智能体对应的分子smiles'']，不返回其他内容。
+            下一轮分子优化任务分配：'
+        selected: false
+        title: 提取继续优化的分子
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '1732505479360'
+      position:
+        x: -314.0863072927034
+        y: 806.2600439889975
+      positionAbsolute:
+        x: -314.0863072927034
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: c35956da-1ccc-437a-ab6f-56051fbfdb0b
+          role: system
+          text: '{{#1732627928880.result1#}}.
+
+            根据提供的分子SMILES，优化分子结构以提升其与GSK3β受体的结合亲和力。优化方式可通过添加、替换或删减官能团实现。生成40个优化后的分子SMILES，要求分子结构不重复，且在功能团分布、分子骨架、和空间结构上体现较高的多样性。探索多种优化策略，确保生成的分子具有显著的结构差异。仅返回优化后的分子SMILES列表，格式如下：[''smiles1'',
+            ''smiles2'', ''smiles3'', ...]，列表内仅包含SMILES字符串，不添加其他内容或说明。'
+        selected: false
+        title: 分子采样GSK3B (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17325056900340'
+      position:
+        x: 389
+        y: 547.1477010590057
+      positionAbsolute:
+        x: 389
+        y: 547.1477010590057
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-141
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-142
+            key: rsp
+            type: text
+            value: '{{#17326306674950.result#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 计算GSK3B_QED_SA(1)
+        type: http-request
+        url: http://39.105.167.2:28051/QED_GSK3B_SA_3
+        variables: []
+      height: 108
+      id: '17325057335190'
+      position:
+        x: 1651.1257325320835
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 1651.1257325320835
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 6fe5d12a-fef2-4f14-a5d2-a0ee17467d4b
+          role: system
+          text: '{{#17325057335190.body#}}
+
+            请根据以下条件判断优化是否成功：1. 优化后的分子与GSK3B受体结合亲和力大于等于优化前的分子与GSK3B受体结合亲和力。2. 优化后的分子的QED值大于等于优化前的分子的QED值。3.
+            优化后的分子的SA值大于等于优化前的分子的SA值。4. Target sum大于等于2.8。
+
+            如果优化成功，仅仅返回：
+
+            Optimization result: True.
+
+            Optimized information: smiles1.（smiles1为优化后的分子smiles）
+
+            如果优化失败，仅仅返回：
+
+            Optimization result: False.
+
+            Optimized information: smiles0.（smiles0为优化后的分子smiles）
+
+            不添加其他内容或说明。'
+        selected: false
+        title: 判断本次优化是否成功 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17325057511870'
+      position:
+        x: 1967.4007275282343
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 1967.4007275282343
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 72c00b60-b0d1-4f5b-901a-b70b6091ea9b
+            value: 'True'
+            varType: string
+            variable_selector:
+            - '17325057511870'
+            - text
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 (1)
+        type: if-else
+      height: 124
+      id: '17325057591820'
+      position:
+        x: 2332.208180829756
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 2332.208180829756
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: af550f2a-b0c1-4b8c-9b26-c80c9e1ba917
+          role: system
+          text: '{{#17325057511870.text#}}
+
+            Extract the molecule following "Optimized information:" and do not return
+            any other text.'
+        selected: false
+        title: 提取最终分子 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17325057688610'
+      position:
+        x: 2686.4312146527923
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 2686.4312146527923
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str, arg2: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    b = ast.literal_eval(arg2)\n    a_b = a + b\n    return {\n       \
+          \ \"result\": a_b\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+        selected: false
+        title: 提取优化过程中的分子 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '1732610445658'
+          - result
+          variable: arg1
+        - value_selector:
+          - '17326306674950'
+          - result
+          variable: arg2
+      height: 52
+      id: '17325057748860'
+      position:
+        x: 3020.27393142611
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 3020.27393142611
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '17325057688610'
+          - text
+          variable: text
+        - value_selector:
+          - '17325057748860'
+          - result
+          variable: smi_list
+        selected: false
+        title: 结束 (1)
+        type: end
+      height: 114
+      id: '17325057798160'
+      position:
+        x: 3374.3692353690158
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 3374.3692353690158
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: c35956da-1ccc-437a-ab6f-56051fbfdb0b
+          role: system
+          text: '{{#17326318390670.result1#}}.
+
+            根据提供的分子SMILES，优化分子结构以提升其与GSK3β受体的结合亲和力。优化方式可通过添加、替换或删减官能团实现。生成40个优化后的分子SMILES，要求分子结构不重复，且在功能团分布、分子骨架、和空间结构上体现较高的多样性。探索多种优化策略，确保生成的分子具有显著的结构差异。仅返回优化后的分子SMILES列表，格式如下：[''smiles1'',
+            ''smiles2'', ''smiles3'', ...]，列表内仅包含SMILES字符串，不添加其他内容或说明。'
+        selected: false
+        title: 分子采样GSK3B (2)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17325058145020'
+      position:
+        x: 395
+        y: 1183.2220595151605
+      positionAbsolute:
+        x: 395
+        y: 1183.2220595151605
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-43
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-47
+            key: rsp
+            type: text
+            value: '{{#17325056900340.text#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个GSK3B (1)
+        type: http-request
+        url: http://39.105.167.2:28051/QED_GSK3B_SA_GSK3B
+        variables: []
+      height: 108
+      id: '17325058593320'
+      position:
+        x: 698
+        y: 547.1477010590057
+      positionAbsolute:
+        x: 698
+        y: 547.1477010590057
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-43
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-47
+            key: rsp
+            type: text
+            value: '{{#17325058145020.text#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个GSK3B (2)
+        type: http-request
+        url: http://39.105.167.2:28051/QED_GSK3B_SA_GSK3B
+        variables: []
+      height: 108
+      id: '17325058718070'
+      position:
+        x: 698
+        y: 1183.2220595151605
+      positionAbsolute:
+        x: 698
+        y: 1183.2220595151605
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-141
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-142
+            key: rsp
+            type: text
+            value: '{{#17326319680690.result#}}'
+          - id: key-value-1227
+            key: ''
+            type: text
+            value: ''
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 计算GSK3B_QED_SA(2)
+        type: http-request
+        url: http://39.105.167.2:28051/QED_GSK3B_SA_3
+        variables: []
+      height: 108
+      id: '17325058869510'
+      position:
+        x: 1651.1257325320835
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: 1651.1257325320835
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 6fe5d12a-fef2-4f14-a5d2-a0ee17467d4b
+          role: system
+          text: '{{#17325058869510.body#}}
+
+            请根据以下条件判断优化是否成功：1. 优化后的分子与GSK3B受体结合亲和力大于等于优化前的分子与GSK3B受体结合亲和力。2. 优化后的分子的QED值大于等于优化前的分子的QED值。3.
+            优化后的分子的SA值大于等于优化前的分子的SA值。4. Target sum大于等于2.8。
+
+            如果优化成功，仅仅返回：
+
+            Optimization result: True.
+
+            Optimized information: smiles1.（smiles1为优化后的分子smiles）
+
+            如果优化失败，仅仅返回：
+
+            Optimization result: False.
+
+            Optimized information: smiles0.（smiles0为优化后的分子smiles）
+
+            不添加其他内容或说明。'
+        selected: false
+        title: 判断本次优化是否成功 (2)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17325058916360'
+      position:
+        x: 1967.4007275282343
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: 1967.4007275282343
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 4253fc39-daed-43c3-8d4b-87b5eaeda875
+            value: 'True'
+            varType: string
+            variable_selector:
+            - '17325058916360'
+            - text
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 (2)
+        type: if-else
+      height: 124
+      id: '17325058981520'
+      position:
+        x: 2332.208180829756
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: 2332.208180829756
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: af550f2a-b0c1-4b8c-9b26-c80c9e1ba917
+          role: system
+          text: '{{#17325058916360.text#}}
+
+            Extract the molecule following "Optimized information:" and do not return
+            any other text.'
+        selected: true
+        title: 提取最终分子 (2)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17325059028670'
+      position:
+        x: 2686.4312146527923
+        y: 1343.961433547495
+      positionAbsolute:
+        x: 2686.4312146527923
+        y: 1343.961433547495
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str, arg2: str, arg3:str) -> dict:\n   \
+          \ a = ast.literal_eval(arg1)\n    b = ast.literal_eval(arg2)\n    c = ast.literal_eval(arg3)\n\
+          \    a_b_c = a + b + c\n    return {\n        \"result\": a_b_c[:30]\n \
+          \   }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+        selected: false
+        title: 提取优化过程中的分子 (2)
+        type: code
+        variables:
+        - value_selector:
+          - '1732610445658'
+          - result
+          variable: arg1
+        - value_selector:
+          - '17326306674950'
+          - result
+          variable: arg2
+        - value_selector:
+          - '17326319680690'
+          - result
+          variable: arg3
+      height: 52
+      id: '17325059085670'
+      position:
+        x: 3020.27393142611
+        y: 1343.961433547495
+      positionAbsolute:
+        x: 3020.27393142611
+        y: 1343.961433547495
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '17325059028670'
+          - text
+          variable: text
+        - value_selector:
+          - '17325059085670'
+          - result
+          variable: smi_list
+        selected: false
+        title: 结束 (2)
+        type: end
+      height: 114
+      id: '17325059126940'
+      position:
+        x: 3374.3692353690158
+        y: 1343.961433547495
+      positionAbsolute:
+        x: 3374.3692353690158
+        y: 1343.961433547495
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-545
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-552
+            key: rsp
+            type: text
+            value: '{{#17326332514450.result1#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 计算GSK3B和QED和SA
+        type: http-request
+        url: http://39.105.167.2:28051/QED_GSK3B_SA_3_end
+        variables: []
+      height: 108
+      id: '1732515995929'
+      position:
+        x: 3020.27393142611
+        y: 1567.118599212599
+      positionAbsolute:
+        x: 3020.27393142611
+        y: 1567.118599212599
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1732515995929'
+          - body
+          variable: text
+        - value_selector:
+          - '17326332514450'
+          - result
+          variable: smi_list
+        selected: false
+        title: 结束 4
+        type: end
+      height: 114
+      id: '1732516312356'
+      position:
+        x: 3374.3692353690158
+        y: 1567.118599212599
+      positionAbsolute:
+        x: 3374.3692353690158
+        y: 1567.118599212599
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 2244dee2-2ffb-406e-a82b-ca4dde3a78a0
+          role: system
+          text: '{{#1732497198694.smiles#}}
+
+            根据提供的分子SMILES，优化分子结构以提升其QED值。优化方式可通过添加、替换或删减官能团实现。生成40个优化后的分子SMILES，要求分子结构不重复，且不与所给分子重复，且在功能团分布、分子骨架、和空间结构上体现较高的多样性。探索多种优化策略，确保生成的分子具有显著的结构差异。仅返回优化后的分子SMILES列表，格式如下：[''smiles1'',
+            ''smiles2'', ''smiles3'', ...]，列表内仅包含SMILES字符串，不添加其他内容或说明。'
+        selected: false
+        title: 分子采样QED
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '1732601471413'
+      position:
+        x: 395
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 395
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-192
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-193
+            key: rsp
+            type: text
+            value: '{{#1732601471413.text#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个QED
+        type: http-request
+        url: http://172.27.48.26:8411/QED_GSK3B_SA_QED
+        variables: []
+      height: 108
+      id: '1732604147426'
+      position:
+        x: 710.125732532083
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 710.125732532083
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析GSK3B的信息
+        type: code
+        variables:
+        - value_selector:
+          - '1732497382655'
+          - body
+          variable: arg1
+      height: 52
+      id: '1732609800162'
+      position:
+        x: 1001
+        y: -163.08109237654577
+      positionAbsolute:
+        x: 1001
+        y: -163.08109237654577
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析QED的信息
+        type: code
+        variables:
+        - value_selector:
+          - '1732604147426'
+          - body
+          variable: arg1
+      height: 52
+      id: '17326100966620'
+      position:
+        x: 1001
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 1001
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\nimport json\ndef main(arg1: str, arg2: str, arg3: str)\
+          \ -> dict:\n    a = ast.literal_eval(arg1)\n    b = ast.literal_eval(arg2)\n\
+          \    c = ast.literal_eval(arg3)\n    return {\n        \"result\": json.dumps(a[0]\
+          \ + b[0] + c[0]),\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 提取分子列表
+        type: code
+        variables:
+        - value_selector:
+          - '1732497382655'
+          - body
+          variable: arg1
+        - value_selector:
+          - '1732604147426'
+          - body
+          variable: arg2
+        - value_selector:
+          - '1732707329658'
+          - body
+          variable: arg3
+      height: 52
+      id: '1732610445658'
+      position:
+        x: 1335.5927109773133
+        y: 103.14544515177346
+      positionAbsolute:
+        x: 1335.5927109773133
+        y: 103.14544515177346
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 896f254d-409e-45d1-ac45-9a7252684153
+          role: system
+          text: "你是一名分子优化决策专家，负责根据当前由 GSK3B、QED 和 SA 三个智能体优化后的分子，重新分配优化任务，以便进一步改进分子的整体性能。\
+            \  \n**任务描述：**  \n根据以下分子分配信息，以及各智能体的优化目标，为下一轮优化任务重新分配分子：  \n- GSK3B 智能体：优化分子以提高与\
+            \ GSK3B 的结合亲和力。  \n- QED 智能体：优化分子以提高药物开发潜力（QED）。  \n- SA 智能体：优化分子以提高归一化后的\
+            \ SA 值（已转换为 [0, 1] 范围的最大化问题，值越接近 1 表明分子越容易合成）。  \n**当前智能体优化后的分子信息：** \
+            \ \nGSK3B 智能体优化的分子： {{#1732609800162.result1#}}\nQED 智能体优化的分子：  {{#17326100966620.result1#}}\n\
+            SA 智能体优化的分子：{{#17327076045270.result1#}}\n**分配原则：**  \n在分子分配中，优先将每个智能体最擅长优化的目标分子分配给其他未曾优化该分子的智能体，以确保分子从不同角度得到全面优化，同时避免单一智能体反复优化同一分子。\
+            \  \n**输出要求：**  \n根据上述分配原则，合理分配分子到三个智能体进行下一轮优化。  \n**输出格式：**  \n下一轮分子优化任务分配：\
+            \  \n- GSK3B 智能体：smilesX  \n- QED 智能体：smilesY \n- SA 智能体：smilesZ \n\n\
+            **注意事项：**  \n1. 分配应综合考虑分子优化方向和各智能体的目标，确保分子从多维度进行优化。  \n2. 在分配时避免单一智能体连续两轮优化同一个分子，以确保优化任务的多样性和全局性。\
+            \  \n"
+        selected: false
+        title: 决策智能体
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '1732624713047'
+      position:
+        x: -587.3486757196015
+        y: 806.2600439889975
+      positionAbsolute:
+        x: -587.3486757196015
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result1\": a[0],\n        \"result3\": a[1],\n\
+          \        \"result4\": a[2],\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result1:
+            children: null
+            type: string
+          result3:
+            children: null
+            type: string
+          result4:
+            children: null
+            type: string
+        selected: false
+        title: 提取分配的列表
+        type: code
+        variables:
+        - value_selector:
+          - '1732505479360'
+          - text
+          variable: arg1
+      height: 52
+      id: '1732627928880'
+      position:
+        x: -41.40063862291129
+        y: 806.2600439889975
+      positionAbsolute:
+        x: -41.40063862291129
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 2244dee2-2ffb-406e-a82b-ca4dde3a78a0
+          role: system
+          text: '{{#1732627928880.result3#}}.
+
+            根据提供的分子SMILES，优化分子结构以提升其QED值。优化方式可通过添加、替换或删减官能团实现。生成40个优化后的分子SMILES，要求分子结构不重复，且不与所给分子重复，且在功能团分布、分子骨架、和空间结构上体现较高的多样性。探索多种优化策略，确保生成的分子具有显著的结构差异。仅返回优化后的分子SMILES列表，格式如下：[''smiles1'',
+            ''smiles2'', ''smiles3'', ...]，列表内仅包含SMILES字符串，不添加其他内容或说明。'
+        selected: false
+        title: 分子采样QED (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17326282128250'
+      position:
+        x: 389
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 389
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-192
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-193
+            key: rsp
+            type: text
+            value: '{{#17326282128250.text#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个QED (1)
+        type: http-request
+        url: http://172.27.48.26:8411/QED_GSK3B_SA_QED
+        variables: []
+      height: 108
+      id: '17326282191010'
+      position:
+        x: 698
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 698
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析GSK3B的信息 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '17325058593320'
+          - body
+          variable: arg1
+      height: 52
+      id: '17326303089060'
+      position:
+        x: 1001
+        y: 547.1477010590057
+      positionAbsolute:
+        x: 1001
+        y: 547.1477010590057
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析QED的信息 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '17326282191010'
+          - body
+          variable: arg1
+      height: 52
+      id: '17326303157860'
+      position:
+        x: 1001
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 1001
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\nimport json\ndef main(arg1: str, arg2: str, arg3: str)\
+          \ -> dict:\n    a = ast.literal_eval(arg1)\n    b = ast.literal_eval(arg2)\n\
+          \    c = ast.literal_eval(arg3)\n    return {\n        \"result\": json.dumps(a[0]\
+          \ + b[0] + c[0]),\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 提取分子列表 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '17325058593320'
+          - body
+          variable: arg1
+        - value_selector:
+          - '17326282191010'
+          - body
+          variable: arg2
+        - value_selector:
+          - '17327184584480'
+          - body
+          variable: arg3
+      height: 52
+      id: '17326306674950'
+      position:
+        x: 1335.5927109773133
+        y: 806.2600439889975
+      positionAbsolute:
+        x: 1335.5927109773133
+        y: 806.2600439889975
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 896f254d-409e-45d1-ac45-9a7252684153
+          role: system
+          text: "你是一名分子优化决策专家，负责根据当前由 GSK3B、QED 和 SA 三个智能体优化后的分子，重新分配优化任务，以便进一步改进分子的整体性能。\
+            \  \n\n**任务描述：**  \n根据以下分子分配信息，以及各智能体的优化目标，为下一轮优化任务重新分配分子：  \n\n- GSK3B\
+            \ 智能体：优化分子以提高与 GSK3B 的结合亲和力。  \n- QED 智能体：优化分子以提高药物开发潜力（QED）。  \n- SA\
+            \ 智能体：优化分子以提高归一化后的 SA 值（已转换为 [0, 1] 范围的最大化问题，值越接近 1 表明分子越容易合成）。  \n\n\
+            **当前智能体优化后的分子信息：**  \nGSK3B 智能体优化的分子： {{#17326303089060.result1#}}\nQED\
+            \ 智能体优化的分子：  {{#17326303157860.result1#}}\nSA 智能体优化的分子：{{#17327184754030.result1#}}\n\
+            \n**分配原则：**  \n在分子分配中，优先将每个智能体最擅长优化的目标分子分配给其他未曾优化该分子的智能体，以确保分子从不同角度得到全面优化，同时避免单一智能体反复优化同一分子。\
+            \  \n**输出要求：**  \n根据上述分配原则，合理分配分子到三个智能体进行下一轮优化。  \n**输出格式：**  \n下一轮分子优化任务分配：\
+            \  \n- GSK3B 智能体：smilesX  \n- QED 智能体：smilesY  \n- SA 智能体：smilesZ\n\n\
+            **注意事项：**  \n1. 分配应综合考虑分子优化方向和各智能体的目标，确保分子从多维度进行优化。  \n2. 在分配时避免单一智能体连续两轮优化同一个分子，以确保优化任务的多样性和全局性。\
+            \  \n"
+        selected: false
+        title: 决策智能体 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17326317788500'
+      position:
+        x: -587.3486757196015
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: -587.3486757196015
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 651f6bfd-03d8-47f1-b217-7be255420c0d
+          role: system
+          text: '{{#17326317788500.text#}}
+
+            从以上文本中提取分子分配信息，返回一个包含分子SMILES的列表，按顺序排列为：[''GSK3B智能体对应的分子smiles'', ''QED智能体对应的分子smiles'',''SA智能体对应的分子smiles'']，不返回其他内容。
+            下一轮分子优化任务分配：'
+        selected: false
+        title: 提取继续优化的分子 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17326318240030'
+      position:
+        x: -308.8630039129266
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: -308.8630039129266
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result1\": a[0],\n        \"result3\": a[1],\n\
+          \        \"result4\": a[2],\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result1:
+            children: null
+            type: string
+          result3:
+            children: null
+            type: string
+          result4:
+            children: null
+            type: string
+        selected: false
+        title: 提取分配的列表 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '17326318240030'
+          - text
+          variable: arg1
+      height: 52
+      id: '17326318390670'
+      position:
+        x: -41.40063862291129
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: -41.40063862291129
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 2244dee2-2ffb-406e-a82b-ca4dde3a78a0
+          role: system
+          text: '{{#17326318390670.result3#}}.
+
+            根据提供的分子SMILES，优化分子结构以提升其QED值。优化方式可通过添加、替换或删减官能团实现。生成40个优化后的分子SMILES，要求分子结构不重复，且不与所给分子重复，且在功能团分布、分子骨架、和空间结构上体现较高的多样性。探索多种优化策略，确保生成的分子具有显著的结构差异。仅返回优化后的分子SMILES列表，格式如下：[''smiles1'',
+            ''smiles2'', ''smiles3'', ...]，列表内仅包含SMILES字符串，不添加其他内容或说明。'
+        selected: false
+        title: 分子采样QED (2)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17326318691210'
+      position:
+        x: 389
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: 389
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-192
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-193
+            key: rsp
+            type: text
+            value: '{{#17326318691210.text#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个QED (2)
+        type: http-request
+        url: http://172.27.48.26:8411/QED_GSK3B_SA_QED
+        variables: []
+      height: 108
+      id: '17326318752700'
+      position:
+        x: 698
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: 698
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析GSK3B的信息 (2)
+        type: code
+        variables:
+        - value_selector:
+          - '17325058718070'
+          - body
+          variable: arg1
+      height: 52
+      id: '17326319175480'
+      position:
+        x: 1001
+        y: 1183.2220595151605
+      positionAbsolute:
+        x: 1001
+        y: 1183.2220595151605
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析QED的信息 (2)
+        type: code
+        variables:
+        - value_selector:
+          - '17326318752700'
+          - body
+          variable: arg1
+      height: 52
+      id: '17326319234280'
+      position:
+        x: 1001
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: 1001
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\nimport json\ndef main(arg1: str, arg2: str, arg3: str)\
+          \ -> dict:\n    a = ast.literal_eval(arg1)\n    b = ast.literal_eval(arg2)\n\
+          \    c = ast.literal_eval(arg3)\n    return {\n        \"result\": json.dumps(a[0]\
+          \ + b[0] + c[0]),\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 提取分子列表 (2)
+        type: code
+        variables:
+        - value_selector:
+          - '17325058718070'
+          - body
+          variable: arg1
+        - value_selector:
+          - '17326318752700'
+          - body
+          variable: arg2
+        - value_selector:
+          - '17327219428480'
+          - body
+          variable: arg3
+      height: 52
+      id: '17326319680690'
+      position:
+        x: 1335.5927109773133
+        y: 1385.2351161114827
+      positionAbsolute:
+        x: 1335.5927109773133
+        y: 1385.2351161114827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\nimport json\ndef main(arg1: str, arg2: str, arg3:str) ->\
+          \ dict:\n    a = ast.literal_eval(arg1)\n    b = ast.literal_eval(arg2)\n\
+          \    c = ast.literal_eval(arg3)\n    a_b_c = a + b + c\n    return {\n \
+          \       \"result\": a_b_c[:30],\n        \"result1\": json.dumps(a_b_c)\n\
+          \    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 提取优化过程中的分子 (3)
+        type: code
+        variables:
+        - value_selector:
+          - '1732610445658'
+          - result
+          variable: arg1
+        - value_selector:
+          - '17326306674950'
+          - result
+          variable: arg2
+        - value_selector:
+          - '17326319680690'
+          - result
+          variable: arg3
+      height: 52
+      id: '17326332514450'
+      position:
+        x: 2686.4312146527923
+        y: 1567.118599212599
+      positionAbsolute:
+        x: 2686.4312146527923
+        y: 1567.118599212599
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 7a031b99-d265-4c60-8244-4a9224ab3415
+          role: system
+          text: '你是一名分子优化专家，专注于优化分子的合成可及性（SA 属性）。SA 是一个最小化问题，分值范围通常为 0 到 10，目标是降低分子的
+            SA 值，使其更容易合成。
+
+            任务描述： 根据提供的分子信息，优化分子的结构以尽可能降低其 SA 值，同时保持分子的功能和基本特性不变。优化后分子应在化学合理性和合成可行性之间取得平衡。
+
+            输出要求：
+
+            提供10个优化后的分子 SMILES，仅返回优化后的分子SMILES列表，格式如下：[''smiles1'', ''smiles2'', ''smiles3'',
+            ...]，不添加其他内容或说明。
+
+            输入信息：
+
+            SMILES: {{#1732497198694.smiles#}}'
+        selected: false
+        title: 分子采样SA
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '1732705980603'
+      position:
+        x: 395
+        y: 336.7596671099743
+      positionAbsolute:
+        x: 395
+        y: 336.7596671099743
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-1586
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-1633
+            key: rsp
+            type: text
+            value: '{{#1732705980603.text#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个SA
+        type: http-request
+        url: http://172.27.48.26:8412/QED_GSK3B_SA_SA
+        variables: []
+      height: 108
+      id: '1732707329658'
+      position:
+        x: 710.125732532083
+        y: 336.7596671099743
+      positionAbsolute:
+        x: 710.125732532083
+        y: 336.7596671099743
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析SA的信息
+        type: code
+        variables:
+        - value_selector:
+          - '1732707329658'
+          - body
+          variable: arg1
+      height: 52
+      id: '17327076045270'
+      position:
+        x: 1001
+        y: 336.7596671099743
+      positionAbsolute:
+        x: 1001
+        y: 336.7596671099743
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 7a031b99-d265-4c60-8244-4a9224ab3415
+          role: system
+          text: '你是一名分子优化专家，专注于优化分子的合成可及性（SA 属性）。SA 是一个最小化问题，分值范围通常为 0 到 10，目标是降低分子的
+            SA 值，使其更容易合成。
+
+            任务描述： 根据提供的分子信息，优化分子的结构以尽可能降低其 SA 值，同时保持分子的功能和基本特性不变。优化后分子应在化学合理性和合成可行性之间取得平衡。
+
+            输出要求：
+
+            提供10个优化后的分子 SMILES，仅返回优化后的分子SMILES列表，格式如下：[''smiles1'', ''smiles2'', ''smiles3'',
+            ...]，不添加其他内容或说明。
+
+            输入信息：
+
+            SMILES: {{#1732627928880.result4#}}.'
+        selected: false
+        title: 分子采样SA (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17327182314740'
+      position:
+        x: 389
+        y: 1033.8059165830139
+      positionAbsolute:
+        x: 389
+        y: 1033.8059165830139
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-1586
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-1633
+            key: rsp
+            type: text
+            value: '{{#17327182314740.text#}}'
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个SA (1)
+        type: http-request
+        url: http://172.27.48.26:8412/QED_GSK3B_SA_SA
+        variables: []
+      height: 108
+      id: '17327184584480'
+      position:
+        x: 698
+        y: 1033.8059165830139
+      positionAbsolute:
+        x: 698
+        y: 1033.8059165830139
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析SA的信息 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '17327184584480'
+          - body
+          variable: arg1
+      height: 52
+      id: '17327184754030'
+      position:
+        x: 1001
+        y: 1033.8059165830139
+      positionAbsolute:
+        x: 1001
+        y: 1033.8059165830139
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-v3
+          provider: openai_api_compatible
+        prompt_template:
+        - id: 7a031b99-d265-4c60-8244-4a9224ab3415
+          role: system
+          text: '你是一名分子优化专家，专注于优化分子的合成可及性（SA 属性）。SA 是一个最小化问题，分值范围通常为 0 到 10，目标是降低分子的
+            SA 值，使其更容易合成。
+
+            任务描述： 根据提供的分子信息，优化分子的结构以尽可能降低其 SA 值，同时保持分子的功能和基本特性不变。优化后分子应在化学合理性和合成可行性之间取得平衡。
+
+            输出要求：
+
+            提供10个优化后的分子 SMILES，仅返回优化后的分子SMILES列表，格式如下：[''smiles1'', ''smiles2'', ''smiles3'',
+            ...]，不添加其他内容或说明。
+
+            输入信息：
+
+            SMILES: {{#17326318390670.result4#}}.'
+        selected: false
+        title: 分子采样SA (2)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 96
+      id: '17327219311730'
+      position:
+        x: 389
+        y: 1642.3970970842167
+      positionAbsolute:
+        x: 389
+        y: 1642.3970970842167
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-1586
+            key: s
+            type: text
+            value: '{{#1732497198694.smiles#}}'
+          - id: key-value-1633
+            key: rsp
+            type: text
+            value: '{{#17327219311730.text#}}'
+          - id: key-value-678
+            key: ''
+            type: text
+            value: ''
+          type: form-data
+        desc: ''
+        headers: ''
+        method: post
+        params: ''
+        selected: false
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 得到前三个SA (2)
+        type: http-request
+        url: http://172.27.48.26:8412/QED_GSK3B_SA_SA
+        variables: []
+      height: 108
+      id: '17327219428480'
+      position:
+        x: 698
+        y: 1642.3970970842167
+      positionAbsolute:
+        x: 698
+        y: 1642.3970970842167
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import ast\ndef main(arg1: str) -> dict:\n    a = ast.literal_eval(arg1)\n\
+          \    return {\n        \"result\": a[0],\n        \"result1\": a[1],\n \
+          \   }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+          result1:
+            children: null
+            type: string
+        selected: false
+        title: 解析SA的信息 (2)
+        type: code
+        variables:
+        - value_selector:
+          - '17327219428480'
+          - body
+          variable: arg1
+      height: 52
+      id: '17327219545820'
+      position:
+        x: 1001
+        y: 1642.3970970842167
+      positionAbsolute:
+        x: 1001
+        y: 1642.3970970842167
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: -721.0683965766816
+      y: -213.0989052985293
+      zoom: 0.49235737780658284
