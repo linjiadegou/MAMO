@@ -1,41 +1,57 @@
 # MAMO
 
-**MAMO** 是一个基于多智能体协作的分子优化框架，通过分布式智能体协同工作实现高效的分子结构优化。
+**MAMO** is a multi-agent collaborative molecular optimization framework that enables efficient molecular structure optimization through distributed agent cooperation.
 
----
+------
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 1. 安装 Dify 平台
+### 1. Install Dify Platform
+
 ```bash
-# 1. 克隆仓库
+# 1. Clone repository
 git clone https://github.com/langgenius/dify.git
 
-# 2. 进入 Docker 目录
+# 2. Enter Docker directory
 cd dify/docker
 
-# 3. 启动服务
+# 3. Start services
 docker compose up -d
 ```
 
-### 2. 导入 MAMO 工作流
+### 2. Import MAMO Workflow
 
 ```bash
-# 1. 登录 Dify 控制台 → 工作室 → 导入 DSL
+# 1. Login to Dify Console → Studio → Import DSL
 
-# 2. 选择对应任务的 .yml 文件上传，即可生成可视化工作流。
+# 2. Select the corresponding .yml file to upload, which will generate a visual workflow.
 ```
 
-| 任务类型          | 导入文件     | 说明                           |
-| ----------------- | ------------ | ------------------------------ |
-| QED + SA 联合优化 | `QED_SA.yml` | 同时优化药物相似性与合成可及性 |
-| 其他任务          | `xxx.yml`    | 按需求导入                     |
-
-### 3. 运行工作流
+### 3. Get Dify API Key
 
 ```bash
+# 1. Open your application in Dify platform
 
+# 2. Navigate to "Settings" → "API Keys"
+
+# 3. Copy the key in format app-xxxxxxxxxxxxxx
 ```
 
+### 4. Prepare Input Data
 
+~~~bash
+Create CSV file (e.g., `input.csv`) with format:
+```csv
+smiles
+CCN(CC)CCOc1ccc(Nc2ncc3cc(-c4c(Cl)cccc4Cl)c(=O)n(C)c3n2)cc1
+CCC1CC2OC(C)(C1OC)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4O
+C1CCCCC1
+...(other molecule SMILES)
+~~~
+
+### 5. Run Optimization
+
+```bash
+python batch_mamo.py --file_path xxx.csv --key "app-xxx"
+```
 
