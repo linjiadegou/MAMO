@@ -1,10 +1,41 @@
 # MAMO
-This is a framework for multi-agent collaboration to complete molecular optimization.
+
+**MAMO** 是一个基于多智能体协作的分子优化框架，通过分布式智能体协同工作实现高效的分子结构优化。
+
+---
 
 ## 🚀 快速开始
-| 方式 | 步骤 |
-|---|---|
-| **Docker（推荐）** | 1. 克隆仓库<br>`git clone https://github.com/langgenius/dify.git`<br>2. 进入目录<br>`cd dify/docker`<br>3. 一键启动<br>`docker compose up -d`<br>4. 访问 http://localhost/install 完成初始化 |
-| **本地源码** | 1. 安装 Poetry（Python 3.10+）<br>`pip install poetry`<br>2. 安装依赖<br>`poetry install`<br>3. 复制环境变量<br>`cp .env.example .env` 并修改<br>4. 初始化数据库<br>`poetry run flask db upgrade`<br>5. 启动服务<br>`poetry run flask run --host 0.0.0.0 --port 5001` |
 
-> 安装完成后，浏览器打开 http://localhost 即可进入 Dify 控制台。
+### 1. 安装 Dify 平台
+```bash
+# 1. 克隆仓库
+git clone https://github.com/langgenius/dify.git
+
+# 2. 进入 Docker 目录
+cd dify/docker
+
+# 3. 启动服务
+docker compose up -d
+```
+
+### 2. 导入 MAMO 工作流
+
+```bash
+# 1. 登录 Dify 控制台 → 工作室 → 导入 DSL
+
+# 2. 选择对应任务的 .yml 文件上传，即可生成可视化工作流。
+```
+
+| 任务类型          | 导入文件     | 说明                           |
+| ----------------- | ------------ | ------------------------------ |
+| QED + SA 联合优化 | `QED_SA.yml` | 同时优化药物相似性与合成可及性 |
+| 其他任务          | `xxx.yml`    | 按需求导入                     |
+
+### 3. 运行工作流
+
+```bash
+
+```
+
+
+
